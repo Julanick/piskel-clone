@@ -15,11 +15,15 @@
 </head>
 
 <body>
-  <header class="conteiner card-header">
-    Piskel-clone
+  <header class="container-fluid card-header">
+      <nav class="navbar navbar-expand-lg fixed-top">
+          <a class="navbar-brand" href="#">
+            <div class="nav-title">Piskel</div>
+          </a>
+        </nav>
   </header>
 
-  <div id="html-webpack-template" class="container-fluid table-bordered main-wrapper">
+  <div id="html-webpack-template" class="container-fluid  table-bordered main-wrapper">
     <div class="row height100">
       <div class="container col-2 pallete-wrapper">
 
@@ -90,21 +94,18 @@
         </div>
       </div>
 
-      <div class="conteiner col-2 height100 p-3">
-        <ul id="frames" class="frames-conteiner pallete-block">
-
-        </ul>
-
-        <button class="btn btn-primary m-2" onclick="createFrame()">Add new frame +</button>
+      <div class="container col-2 height100 p-4">
+        <ul id="frames" class="frames-container pallete-block"></ul>
+        <button class="btn btn-primary w-100" onclick="createFrame()">Add new frame +</button>
       </div>
 
-      <div id="palette-wrapper" class="conteiner col-6" oncontextmenu="return false;">
+      <div id="palette-wrapper" class="container col-6" oncontextmenu="return false;">
         <div id="palette" class="canvas-grid">
         </div>
       </div>
 
-      <div class="conteiner col-2 mt-4">
-        <div class="animation-conteiner pallete-block">
+      <div class="container col-2 mt-4">
+        <div class="animation-container pallete-block">
           <div id="animation" class="animation">
           </div>
         </div>
@@ -117,40 +118,95 @@
 
       </div>
 
+      <div id="landing" class="modal">
+
+        <div class="landing-page">
+          <!-- navbar -->
+          <nav class="navbar navbar-expand-lg fixed-top">
+            <a class="navbar-brand">
+              <div class="nav-title">Piskel</div>
+            </a>
+          </nav>
+          <div class="container-fluid  landing-grid">
+            <div class="landing-grid-element">
+              <img src="8c9eb27107b084908f923ae86fb9b580.png" alt="...">
+              <p>Selection of palette size</p>
+            </div>
+            <div class="landing-grid-element">
+              <img src="1cfb2d0f459bb3f6765f1f202e97a87d.png" alt="...">
+              <p>Select color tool</p>
+            </div>
+            <div class="landing-grid-element">
+              <img src="e097d84c84711f836173d02baccd5d15.png" alt="...">
+              <p>Tools box for pallete and frames moving</p>
+            </div>
+            <div class="landing-grid-element">
+              <img src="1a1175a93c398a1c95da403bd18fe42d.png" alt="...">
+              <p>Preview, full screen by click and gif export </p>
+            </div>
+            <div class="landing-grid-element">
+              <img src="cfb66a65afd771664e2ee3521e22b363.png" alt="...">
+              <p>Frame management</p>
+            </div>
+            <div class="gotItButtonContainer">
+              <div>Here you can create your own simple animation. Just use intuitive interface and tools to achieve result. Good luck! :) </div>
+              <button id="landingGotIt" class="btn btn-primary w-50 h-25">GOT IT!</button>
+            </div>
+            <div class="landing-grid-element">
+              <img src="2b021494ec1288b249a9dd8046c33beb.gif" alt="...">
+              <p>GIF example</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="about-author">
+            <img src="0f16360f3bad582d147a32dfa6d2abec.png" class="img-aboutme">
+            <p class="about-aut-title"> Yuliya Pakidzka
+              <span>My name Yuliya.
+                  I'm beginer in a programming world, but I really happy to create different applications like this one.
+                  I would be approtiate if rate my first expiriance of programming with a good mark. Thank you! :) </span>
+            </p>
+          </div>
+        </div>
+
+
+
+      </div>
+
       <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <div class="modal-content" id="animation-full-screen">
+        </div>
       </div>
-
     </div>
-  </div>
 
-  <script id="frameTemplate" type="text/html">
+    <script id="frameTemplate" type="text/html">
         <div id="#id#" class="frame noselect" style="background-image: url(#background-image#)">
                 <div class="noselect">
                     <div class="frame-position noselect">#position#</div>
                 </div>
                 <div class="noselect"></div>
-                <button onclick="deleteFrame(this)">Del</button>
+                <button onclick="deleteFrame(this)"><i class="fas fa-trash-alt"></i></button>
                 <div class="noselect"></div>
                 <div class="noselect"></div>
                 <div class="noselect"></div>
-                <button onclick="copyFrame(this)">Copy</button>
+                <button onclick="copyFrame(this)"><i class="fas fa-copy"></i></button>
                 <div class="noselect"></div>
                 <div class="noselect"></div>
         </div>
     </script>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <!-- <script src="https://unpkg.com/vanilla-picker@2"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <!-- <script src="https://unpkg.com/vanilla-picker@2"></script> -->
 <script type="text/javascript" src="app.bundle.js"></script></body>
 
 </html>
